@@ -16,36 +16,44 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("New App")),
-      body: Container(
-        height: 100,
-        color: Colors.teal,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: Center (
+        child: Container(
+          height: 100,
+          width: 100,
+          color: Colors.teal,
+        	),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.all(0),
           children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.red,
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
+            UserAccountsDrawerHeader(
+              accountName: Text("Ayaz Maq"),
+              accountEmail: Text("itsayazmaqbool@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                  "https://images.unsplash.com/photo-1530695440407-21fef47230b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80") 
+              )
             ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.yellow,
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Ayaz Maq"),
+              subtitle: Text("Developer"),
+              trailing: Icon(Icons.edit),
+              onTap: () {},
             ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              color: Colors.green,
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Email"),
+              subtitle: Text("itsayazmaqbool@gmail.com"),
+              trailing: Icon(Icons.edit),
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(Icons.edit),
       ),
     );
   }
