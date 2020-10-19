@@ -17,8 +17,36 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("New App")),
       body: Container(
-          child: Text("Hi Flutters"),
-      )
+        height: 100,
+        color: Colors.teal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              padding: const EdgeInsets.all(8),
+              color: Colors.red,
+              width: 100,
+              height: 100,
+              alignment: Alignment.center,
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              color: Colors.yellow,
+              width: 100,
+              height: 100,
+              alignment: Alignment.center,
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              color: Colors.green,
+              width: 100,
+              height: 100,
+              alignment: Alignment.center,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
