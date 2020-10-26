@@ -7,6 +7,7 @@ import 'dart:convert';
 
 
 class HomePage extends StatefulWidget {
+  static const String routeName = "/home";
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -26,9 +27,9 @@ class _HomePageState extends State<HomePage> {
 
   fetchData()async{
     var res = await http.get(url);
-    print(res.body);
+    //print(res.body);
     data = jsonDecode(res.body);
-    print(data);
+    //print(data);
     setState(() {});
   }
 
