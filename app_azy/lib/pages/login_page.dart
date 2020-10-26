@@ -1,4 +1,5 @@
 import 'package:app_azy/pages/home_page.dart';
+import 'package:app_azy/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -69,8 +70,9 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           RaisedButton(
                             onPressed: () {
-                              formKey.currentState.validate();
-                              Navigator.pushNamed(
+                              Constants.prefs.setBool("loggedIn", true);
+                              //formKey.currentState.validate();
+                              Navigator.pushReplacementNamed(
                                 context,
                                 HomePage.routeName,
                               );

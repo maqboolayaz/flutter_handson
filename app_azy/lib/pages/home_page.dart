@@ -1,9 +1,12 @@
 
 import 'package:app_azy/drawer.dart';
 import 'package:app_azy/name_card_widget.dart';
+import 'package:app_azy/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+
+import 'login_page.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -43,7 +46,19 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text("New App")),
+        title: Text("New App"),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.exit_to_app),
+              onPressed: () {
+                Constants.prefs.setBool("loggedIn", false);
+                Navigator.pushReplacementNamed(
+                  context,
+                  LoginPage.routeName,
+                );
+              })
+        ],
+      ),
       body: data != null?
           ListView.builder(
               itemBuilder: (context, index) {
